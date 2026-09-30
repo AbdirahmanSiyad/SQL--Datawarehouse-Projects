@@ -18,12 +18,12 @@ Sources Processed:
 ===============================================================================
 TECHNICAL NOTES & MACOS/MYSQL COMPATIBILITY
 ===============================================================================
-* STORED PROCEDURE LIMITATION:
+- STORED PROCEDURE LIMITATION:
   - MySQL strictly forbids `LOAD DATA LOCAL INFILE` inside Stored Procedures 
     (Error Code 1295: Command not supported in prepared statement protocol).
   - Setting `secure_file_priv = NULL` blocks server-side file reading (`LOAD DATA INFILE`).
 
-* SINGLE RESULT OUTPUT SOLUTION:
+- SINGLE RESULT OUTPUT SOLUTION:
   - To avoid MySQL Workbench creating dozens of separate result tabs for each PRINT/SELECT,
     all log messages are captured in a temporary table `tmp_log` and rendered as ONE 
     consolidated output at the end of the script execution.
